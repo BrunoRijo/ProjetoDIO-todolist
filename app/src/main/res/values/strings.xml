@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">To Do List</string>
+    <string name="cancel_task">Cancelar tarefa</string>
+    <string name="new_task">Criar tarefa</string>
+</resources>
