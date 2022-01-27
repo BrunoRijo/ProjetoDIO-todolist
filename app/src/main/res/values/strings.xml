@@ -2,4 +2,8 @@
     <string name="app_name">To Do List</string>
     <string name="cancel_task">Cancelar tarefa</string>
     <string name="new_task">Criar tarefa</string>
+    <string name="content_desc_fabNewTask">CRIA UMA NOVA TAREFA</string>
+    <string name="desc_example">Não esquecer de Lavar o carro novamente, comprar materiais de limpeza</string>
+    <string name="title_example">Lavar o carro</string>
+    <string name="time_example">27/01/2022 14:50</string>
 </resources>
