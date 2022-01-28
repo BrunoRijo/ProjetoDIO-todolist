@@ -1,5 +1,6 @@
 package br.com.dio.todolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.dio.todolist.databinding.ActivityAddTaskBinding
@@ -15,12 +16,26 @@ import java.util.*
 class AddTaskActivity: AppCompatActivity() {
 
     lateinit var binding: ActivityAddTaskBinding
-    lateinit var taskDatasource: TaskDatasource
+
+    companion object{
+        const val TASK_ID = "task_id"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if(intent.hasExtra(TASK_ID)){
+            val taskId = intent.getIntExtra(TASK_ID, 0)
+            TaskDatasource.findById(taskId)?.let {
+                binding.tilTitle.text = it.title
+                binding.tilDescription.text = it.description
+                binding.tilDate.text = it.date
+                binding.tilHora.text = it.hour
+            }
+
+        }
 
         insertListeners()
     }
@@ -55,9 +70,11 @@ class AddTaskActivity: AppCompatActivity() {
                 title = binding.tilTitle.text,
                 description = binding.tilDescription.text,
                 date = binding.tilDate.text,
-                hour = binding.tilHora.text
+                hour = binding.tilHora.text,
+                id = intent.getIntExtra(TASK_ID, 0)
             )
-            taskDatasource.insertTask(task)
+            TaskDatasource.insertTask(task)
+            setResult(Activity.RESULT_OK)
             finish()
         }
     }

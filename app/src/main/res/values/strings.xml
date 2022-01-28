@@ -6,4 +6,6 @@
     <string name="desc_example">Não esquecer de Lavar o carro novamente, comprar materiais de limpeza</string>
     <string name="title_example">Lavar o carro</string>
     <string name="time_example">27/01/2022 14:50</string>
+    <string name="delete">Editar</string>
+    <string name="edit">Editar</string>
 </resources>
