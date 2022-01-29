@@ -34,9 +34,7 @@ class AddTaskActivity: AppCompatActivity() {
                 binding.tilDate.text = it.date
                 binding.tilHora.text = it.hour
             }
-
         }
-
         insertListeners()
     }
 
@@ -66,7 +64,7 @@ class AddTaskActivity: AppCompatActivity() {
         }
 
         binding.btnNewTask.setOnClickListener {
-            var task : Task = Task(
+            var task = Task(
                 title = binding.tilTitle.text,
                 description = binding.tilDescription.text,
                 date = binding.tilDate.text,
