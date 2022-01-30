@@ -23,6 +23,4 @@ object TaskDatasource {
     fun deleteTask(task: Task) {
         list.remove(task)
     }
-
-
 }
